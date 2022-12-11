@@ -1,0 +1,688 @@
+#!/bin/bash
+
+function firstpage()
+ {
+  echo "  CHAHAT   CHOOSE  AN   OPTION" | toilet -F border --gay
+       espeak -s 150- -p 70 "CHAHAT CHOOSE AN OPTION"
+echo "1. CALCULATOR
+2. SITES
+3. TOOLS
+4. SHUTDOWN"
+ }
+
+
+function shape()
+{
+clear
+toilet -F border --gay -w 500 "Enter your choice" | lolcat
+echo "1. Area
+2. Perimeter
+3. Volume
+4. Exit"
+read ch
+
+if (( $ch == 1 ))
+then 
+area
+
+elif (( $ch == 2 ))
+then
+perimeter
+
+elif (( $ch == 3 ))
+then 
+volume
+
+elif (( $ch == 4 ))
+then
+clear 
+calculator
+
+while (( $ch > 4 ))
+do 
+figlet "Change option"
+shape
+done
+
+else
+echo "Change the choice" 
+fi
+}
+
+function area()
+{
+pi=3.14
+half=1/2
+echo "Choose the shape
+1. Square
+2. Rectangle
+3. Circle
+4. Triangle
+5. Exit"
+read sh
+
+if (( $sh == 1 ))
+then 
+echo "Enter the side"
+read side 
+res=`echo "scale=4;$side * $side" | bc`
+ echo "*******************"
+figlet -c -w 200 "Area of Square is $res"
+ echo "*******************"
+ 
+elif (( $sh == 2 ))
+then 
+echo "Enter the length"
+read l
+echo "Enter the breadth"
+read b
+res=`echo "scale=4;$l * $b" | bc`
+ echo "*******************"
+figlet -c -w 200 "Area of Rectangle is $res"
+ echo "*******************"
+ 
+elif (( $sh == 3 ))
+then 
+echo "Enter the Radius"
+read r
+res=`echo "scale=4; $pi * $r * $r" | bc`
+ echo "*******************"
+figlet -c -w 200 "Area of Circle is $res"
+ echo "*******************"
+ 
+elif (( $sh == 4 ))
+then 
+echo "Enter the Height"
+read h
+echo "Enter the base size"
+read b
+res=`echo "scale=4;$half * $h * $b" | bc`
+ echo "*******************"
+figlet -c -w 200 "Area of Triangle is $res"
+ echo "*******************"
+ 
+elif (( $sh == 5 ))
+then
+clear
+shape
+
+while (( $sh > 5 ))
+do 
+echo "Check input"
+clear
+area
+done
+
+else
+echo "Change your choice"
+fi 
+}
+
+function perimeter()
+{
+pi=3.14
+half=1/2
+four=4
+double=2
+echo "Choose the shape
+1. Square
+2. Rectangle
+3. Circle
+4. Triangle
+5. Exit"
+read sh
+
+if (( $sh == 1 ))
+then 
+echo "Enter the side"
+read side 
+res=`echo "scale=4;$four * $side" | bc`
+ echo "*******************"
+figlet -c -w 200 "Perimeter of Square is $res"
+ echo "*******************"
+ 
+elif (( $sh == 2 ))
+then 
+echo "Enter the length"
+read l
+echo "Enter the breadth"
+read b
+res=`echo "scale=4;$l + $b + $l + $b" | bc`
+ echo "*******************"
+figlet -c -w 200 "Perimeter of Rectangle is $res"
+ echo "*******************"
+ 
+elif (( $sh == 3 ))
+then 
+echo "Enter the Radius"
+read r
+res=`echo "scale=4; $double * $pi * $r" | bc`
+ echo "*******************"
+figlet -c -w 200 "Perimeter of Circle is $res"
+ echo "*******************"
+ 
+elif (( $sh == 4 ))
+then 
+echo "Enter the Side 1"
+read s1
+echo "Enter the Side 2"
+read s2
+echo "Enter the side 3"
+read s3
+res=`echo "scale=4;$s1 + $s2 + $s3" | bc`
+ echo "*******************"
+figlet -c -w 200 "Perimeter of Triangle is $res"
+ echo "*******************"
+ 
+elif (( $sh == 5 ))
+then
+clear
+shape
+
+while (( $sh > 5 ))
+do 
+echo "Check input"
+clear
+perimeter
+done
+
+else
+echo "Change your choice"
+clear
+perimeter
+fi 
+}
+
+function volume()
+{
+pi=3.14
+six=6
+four=4
+double=2
+ft=4/3
+echo "Choose the shape
+1. Cube
+2. Cubiod
+3. Cyliner
+4. Sphere
+5. Exit"
+read sh
+
+if (( $sh == 1 ))
+then 
+echo "Enter the side"
+read side 
+res=`echo "scale=4;$side * $side * $side " | bc`
+ echo "*******************"
+figlet -c -w 200 "Volume of Cube is $res"
+ echo "*******************"
+ 
+elif (( $sh == 2 ))
+then 
+echo "Enter the length"
+read l
+echo "Enter the breadth"
+read b
+echo "Enter the height"
+read h
+res=`echo "scale=4;$l * $b * $h" | bc`
+ echo "*******************"
+figlet -c -w 200 "Volume of Cubiod is $res"
+ echo "*******************"
+ 
+elif (( $sh == 3 ))
+then 
+echo "Enter the Radius"
+read r
+echo "Enter the Height"
+read h
+res=`echo "scale=4; $pi * $r * $r * $h" | bc`
+ echo "*******************"
+figlet -c -w 200 "Volume of Cylinder is $res"
+ echo "*******************"
+ 
+elif (( $sh == 4 ))
+then 
+echo "Enter the Radius"
+read r
+res=`echo "scale=4;$ft * $pi * $r * $r * $r" | bc`
+ echo "*******************"
+figlet -c -w 200 "Volume of Sphere is $res"
+ echo "*******************"
+ 
+elif (( $sh == 5 ))
+then 
+clear
+shape
+
+while (( $sh > 5 ))
+do 
+echo "Wrong choice"
+clear
+volume
+done
+
+else
+echo "Change your choice"
+fi 
+}
+
+function calculator()
+{
+clear
+echo "  WELCOME   TO  THE  CALCULATOR " | toilet -F border --gay -w 500 | lolcat
+espeak -s 150 -p 70 "welcome to the calculator"
+figlet -w 200 "Enter the Operation"
+echo "1. ADD
+2. Sub
+3. Multiple
+4. Divide
+5. factor
+6. Square
+7. Cube
+8. Shapes
+9. Percentage
+10. Exit"
+read op
+
+while (( $op > 10 ))
+do
+figlet "Correct your option"
+sleep 1s
+clear
+calculator
+done
+
+if (( $op < 5 )) 
+then
+ echo "Enter the first number"
+ read x
+ echo "Enter the second number"
+ read y
+ echo "Entered Numbers are $x and $y" | lolcat
+ espeak -s 130 -p 70 "entered Numbers are  $x and $y"
+
+if (( $op == 1 )) 
+then 
+res=`echo "scale=4; $x + $y" | bc`
+ echo "*******************"
+figlet -c -w 200 "Result is $res"
+ echo "*******************"
+ 
+elif (( $op == 2 ))
+then
+res=`echo "scale=4; $x - $y" | bc`
+ echo "*******************"
+figlet -c -w 200 "Result is $res"
+ echo "*******************"
+ 
+elif (( $op == 3 ))
+then
+res=`echo "scale=4; $x * $y" | bc`
+ echo "*******************"
+figlet -c -w 200 "Result is $res"
+ echo "*******************"
+ 
+else
+res=`echo "scale=4; $x / $y" | bc`
+ echo "*******************"
+figlet -c -w 200 "Result is $res"
+ echo "*******************"
+fi
+
+
+elif (( 4 < $op && $op < 8 ))
+then 
+echo "Enter the value"
+read x
+echo "Entered Number is $x" | lolcat
+espeak -s 130 -p 70 "entered Number is $x "
+
+if (( $op == 5 ))
+then
+ echo "*******************"
+factor $x
+ echo "*******************"
+ 
+elif (( $op == 6 ))
+then
+res=`echo "scale=4; $x * $x" | bc`
+ echo "*******************"
+figlet -c -w 200 "Square of $x is $res"
+ echo "*******************"
+ 
+else
+res=`echo "scale=4; $x * $x * $x" | bc`
+ echo "*******************"
+figlet -c -w 200 "Cube of $x is $res"
+ echo "*******************"
+fi
+
+
+elif (( $op == 8 ))
+then
+shape
+
+elif (( $op == 9 ))
+then
+hun=100
+echo "Enter part"
+read part
+echo "Enter total value"
+read total
+res=`echo "scale=2;$part * $hun / $total" | bc`
+ echo "*******************"
+figlet -c -w 200 "$part is $res% of $total"
+espeak -s 150 -p 70 "$part is $res% of $total"
+ echo "*******************"
+
+else 
+echo "Wrong choice"
+clear 
+fi 
+}
+
+function calend()
+{
+figlet -w 300 "Do you want to perform some more?
+1. YES
+2. NO"
+read repeat
+
+while (( $repeat > 2 ))
+do 
+clear
+calend
+done
+
+if (( $repeat == 1 ))
+then 
+clear
+calculator
+sleep 1s
+calend
+
+elif (( $repeat == 2 ))
+then 
+figlet -c -w 200 "THANKS" | lolcat
+sleep 1s
+clear
+loop
+
+else 
+calend
+fi
+}
+
+
+#site selection
+function secondpage()
+{
+    echo " CHOOSE THE SITE" | toilet -f mono12 -F border --gay
+    espeak -s 150 -p 70 " CHOOSE THE SITE"
+echo "1.  Google
+2.  Facebook
+3.  Instagram
+4.  G-Mail
+5.  You-Tube
+6.  Netflix
+7.  Twitter
+8.  Hotstar
+9.  Prime video
+10. Amazon
+11. Back"
+ read sh
+ while (( $sh > 11 ))
+  do
+    toilet -f mono12 -F border --gay -w 150 "SORRY"
+    espeak -s 120 -p 70 "SORRY "
+  read sh
+ done
+if (( $sh == 1 ))
+  then
+  echo "               GOOGLE                 " | figlet -c -w 200
+  xdg-open https://www.google.com/
+elif (( $sh == 2 ))
+  then 
+  echo "               FACEBOOK                 " | figlet -c -w 200
+  xdg-open https://www.facebook.com/
+elif (( $sh == 3 ))
+  then
+  echo "               INSTAGRAM                " | figlet -c -w 200
+  xdg-open https://www.instagram.com/
+elif (( $sh == 4 ))
+  then
+  echo "               G-MAIL                   " | figlet -c -w 200
+  xdg-open https://accounts.google.com/v3/signin/identifier
+dsh=S-1710398024%3A1669615617696694&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin&ifkv=ARgdvAvseZdYFzAV2VBN1UccfYuno50UwjF-Hx4317wLbeLhOUoD1nuu8X-b57z7I17kyueDM42DAA
+elif (( $sh == 5 ))
+  then
+  echo "               You-Tube                " | figlet -c -w 200
+  xdg-open https://www.youtube.com/
+elif (( $sh == 6 ))
+  then
+  echo "               Netflix                " | figlet -c -w 200
+  xdg-open https://www.netflix.com/in/
+elif (( $sh == 7 ))
+  then
+  echo "               Twitter                " | figlet -c -w 200
+  xdg-open https://twitter.com/i/flow/login
+elif (( $sh == 8 ))
+  then
+  echo "               Hotstar                " | figlet -c -w 200
+  xdg-open https://www.hotstar.com/in
+elif (( $sh == 9 ))
+  then
+  echo "               Prime video                " | figlet -c -w 200
+  xdg-open https://www.primevideo.com/?ref_=dvm_pds_gen_in_as_s_gm_sm1&gclid=EAIaIQobChMI5duqh8zT-wIVOpNmAh2K5QJpEAAYASABEgKgZfD_BwE
+elif (( $sh == 10 ))
+  then
+  echo "               Amazon                " | figlet -c -w 200
+  xdg-open https://www.amazon.in/?&ext_vrnc=hi&tag=googhydrabk1-21&ref=pd_sl_6b31gegj9g_e&adgrpid=60612964962&hvpone=&hvptwo=&hvadid=486380734071&hvpos=&hvnetw=g&hvrand=8191549605994450355&hvqmt=e&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9301898&hvtargid=kwd-49491430&hydadcr=14454_2154375&gclid=EAIaIQobChMItc7IpczT-wIVTpVLBR0L6wC9EAAYASAAEgIBu_D_BwE
+elif (( $sh == 11 ))
+  then
+  clear 
+  loop
+else
+    echo "Wrong Choice" | figlet -c -w 200
+    espeak -s 150 -p 70 "Wrong Choice"
+fi
+}
+
+#thirdpage
+function thirdpage()
+{
+  echo " CHOOSE THE TOOL" | toilet -f mono12 -F border --gay
+   espeak -s 150 -p 70 "Choose the tool"
+echo "1. RedHawk
+2. Zphisher
+3. TBomb
+4. BlackPhish
+5. CamHacker
+6. Osintgram
+7. Knockpy
+8. Bug Bounty
+9. Back"
+   read tool
+while (( $tool > 9 ))
+ do 
+  echo " Change the input " | figlet -c -w 180 | lolcat
+  espeak -s 150 -p 70 " change the input "
+  read tool
+done
+  echo "Tool selected $tool" | figlet -c -w 150
+  espeak -s 150 -p 70 "Tool selected $tool"
+if (( tool == 1 ))
+  then 
+  xdotool type 'redhawk/RED_HAWK'
+  espeak -s 150 -p 70 "welcome to red hawk"
+  clear
+elif (( tool == 2 ))
+  then 
+  xdotool type 'zphisher/zphisher.sh'
+  espeak -s 150 -p 70 "welcome to zphisher"
+  clear
+elif (( tool == 3 ))
+  then 
+  xdotool type 'TBomb/TBomb.sh'
+  espeak -s 150 -p 70  "welcome to TBomb"
+  clear
+elif (( tool == 4 ))
+  then 
+  xdotool type 'BlackPhish'
+  espeak -s 150 -p 70 "welcome to BlackPhish"
+  clear
+elif (( tool == 5 ))
+  then 
+  xdotool type 'CamHacker'
+  espeak -s 150 -p 70 "welcome to CamHacker"
+  clear
+elif (( tool == 6 ))
+  then 
+  xdotool type 'Osintgram'
+  espeak -s 150 -p 70 "welcome to Osintgram"
+  clear
+elif (( tool == 7 ))
+  then 
+  xdotool type 'Knockpy'
+  espeak -s 150 -p 70 "welcome to knockpy"
+  clear
+elif (( tool == 8 ))
+  then 
+  espeak -s 150 -p 70 "Let's go for Bug bounty"
+  xdg-open https://www.openbugbounty.org/report/
+  clear
+elif (( $tool == 9 ))
+  then
+  clear 
+  loop
+else
+echo "bye"
+fi 
+}
+
+#loop after firstpage
+function loop()
+{
+firstpage 
+read option
+
+while (( $option > 4 ))
+   do
+   echo "WRONG INPUT PLEASE CHOOSE THE CORRECT ONE" | figlet -c -w 200
+       espeak -s 150 -p 70 "WRONG INPUT PLEASE CHOOSE THE CORRECT ONE"
+read option
+done
+echo " Selected option is $option" | figlet
+clear
+
+if (( $option == 1 ))
+then 
+calculator
+sleep 2s
+calend
+
+elif (( $option == 2 ))
+then
+secondpage
+
+elif (( $option == 3 ))
+  then
+  clear
+thirdpage
+ 
+elif (( $option == 4 ))
+ then
+ figlet -c -w 200 "THANKS FOR USING THE TOOL" | lolcat
+ espeak -s 150 -p 70 "THANKS FOR USING THE TOOL" 
+ cmatrix &&shutdown 
+
+else
+    echo "WRONG INPUT PLEASE CHOOSE THE CORRECT ONE" | figlet -c -w 200
+    espeak -s 150 -p 70 "WRONG INPUT PLEASE CHOOSE THE CORRECT ONE"
+  clear
+fi
+#main choice page end
+}
+
+
+
+clear
+toilet -f mono12 -F metal -w 500 "WELCOME TO VAAST" | lolcat
+             espeak -s 150 -p 70 "WELCOME TO VAAST" 
+             sleep 2
+             sl
+clear 
+figlet -c -f slant -w 200 "ENTER USERNAME --" |  lolcat
+      espeak -s 150 -p 70 "ENTER USERNAME "
+      read user
+figlet -c -f slant -w 200 "ENTER PASSWORD --" | lolcat
+      espeak -s 150 -p 70 "ENTER PASSWORD "
+      read pass
+      
+      
+if [[ $user == "CHAHAT" && $pass == "SINGLA" ]]
+then
+    clear
+    echo "  WELCOME  TO   THE   TERMINAL" | toilet -F border --gay -w 500
+        espeak -s 150 -p 70 "WELCOME TO THE TERMINAL"
+
+clear
+#option selection terminal 
+firstpage 
+read option
+
+while (( $option > 4 ))
+   do
+   echo "WRONG INPUT PLEASE CHOOSE THE CORRECT ONE" | figlet -c -w 200
+       espeak -s 150 -p 70 "WRONG INPUT PLEASE CHOOSE THE CORRECT ONE"
+read option
+done
+echo " Selected option is $option" | figlet
+clear
+
+if (( $option == 1 ))
+then 
+calculator
+sleep 2s
+calend
+
+
+elif (( $option == 2 ))
+then
+secondpage
+
+elif (( $option == 3 ))
+  then
+  clear
+thirdpage
+ 
+elif (( $option == 4 ))
+ then
+ figlet -c -w 200 "THANKS FOR USING THE TOOL" | lolcat
+ espeak -s 150 -p 70 "THANKS FOR USING THE TOOL" 
+ cmatrix &&shutdown 
+
+else
+    echo "WRONG INPUT PLEASE CHOOSE THE CORRECT ONE" | figlet -c -w 200
+    espeak -s 150 -p 70 "WRONG INPUT PLEASE CHOOSE THE CORRECT ONE"
+  clear
+fi
+#main choice page end
+
+else
+ clear
+     cowsay -f gnu "Incorrect password, bye" | lolcat
+     espeak -s 180 -p 70 "incorrect password"
+     espeak -s 150 -p 70 "bye" 
+shutdown && cmatrix && sl
+sl
+sl
+sl
+sl
+sl
+sl
+sl
+sl
+sl
+fi
